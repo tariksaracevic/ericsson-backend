@@ -1,8 +1,8 @@
 package com.erricson.application.controller;
 
 import com.erricson.application.exceptions.ResourceNotFoundException;
-import com.erricson.application.model.TaskList;
 import com.erricson.application.model.Task;
+import com.erricson.application.model.TaskList;
 import com.erricson.application.service.TaskListService;
 import com.erricson.application.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;

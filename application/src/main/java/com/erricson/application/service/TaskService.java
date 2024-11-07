@@ -1,8 +1,8 @@
 package com.erricson.application.service;
 
 import com.erricson.application.exceptions.ResourceNotFoundException;
-import com.erricson.application.model.TaskList;
 import com.erricson.application.model.Task;
+import com.erricson.application.model.TaskList;
 import com.erricson.application.repository.TaskListRepository;
 import com.erricson.application.repository.TaskRepository;
 import jakarta.transaction.Transactional;
