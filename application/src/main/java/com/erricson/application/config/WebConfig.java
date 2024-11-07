@@ -1,4 +1,4 @@
-package com.erricson.application.config; // Use your application's package structure
+package com.erricson.application.config;
 
 import com.erricson.application.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,11 +21,11 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**") // Apply CORS settings to all endpoints
-                .allowedOrigins("http://localhost:4200") // Allow requests from your frontend URL
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow these HTTP methods
-                .allowedHeaders("*") // Allow all headers
-                .allowCredentials(true); // Allow credentials (like cookies)
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:4200")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 
     private final UserRepository userRepository;
