@@ -44,16 +44,6 @@ public class TaskController {
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Task> updateTask(
-//            @PathVariable Long boardId,
-//            @PathVariable Long taskListId,
-//            @PathVariable Long id,
-//            @RequestBody Task updatedTask) {
-//        Task task = taskService.updateTask(id, updatedTask);
-//        return new ResponseEntity<>(task, HttpStatus.OK);
-//    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(
             @PathVariable Long boardId,
@@ -76,11 +66,9 @@ public class TaskController {
             @PathVariable Long taskListId,
             @PathVariable Long taskId
     ) {
-        // Fetch the new taskList by taskListId
         TaskList taskList = taskListService.getTaskListById(taskListId)
                 .orElseThrow(() -> new ResourceNotFoundException("TaskList not found with id " + taskListId));
 
-        // Update the task's taskList
         Task updatedTask = taskService.updateTaskColumn(taskId, taskList);
 
         return ResponseEntity.ok(updatedTask);

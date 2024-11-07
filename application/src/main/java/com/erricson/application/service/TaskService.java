@@ -36,10 +36,8 @@ public class TaskService {
         TaskList taskList = taskListRepository.findById(taskListId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid taskList ID: " + taskListId));
 
-        // Set the TaskList on the Task
         task.setTaskList(taskList);
 
-        // Save the Task
         return taskRepository.save(task);
     }
 
@@ -62,14 +60,11 @@ public class TaskService {
 
     @Transactional
     public Task updateTaskColumn(Long taskId, TaskList newTaskList) {
-        // Find the task by ID
         Task task = taskRepository.findById(taskId)
                 .orElseThrow(() -> new ResourceNotFoundException("Task not found with id " + taskId));
 
-        // Update the task's column
         task.setTaskList(newTaskList);
 
-        // Save the task with the new column
         return taskRepository.save(task);
     }
 }

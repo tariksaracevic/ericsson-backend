@@ -18,10 +18,6 @@ public class Board {
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TaskList> taskLists = new ArrayList<>();
 
-//    public List<Task> getTasks() {
-//        return tasks;
-//    }
-
     public Long getId() {
         return id;
     }

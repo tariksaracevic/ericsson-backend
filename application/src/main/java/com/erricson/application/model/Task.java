@@ -22,8 +22,6 @@ public class Task {
         return taskList != null ? taskList.getId() : null;
     }
 
-    // Constructors, Getters, and Setters
-
     public Long getId() {
         return id;
     }

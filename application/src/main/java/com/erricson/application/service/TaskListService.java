@@ -31,14 +31,11 @@ public class TaskListService {
     }
 
     public TaskList createTaskList(Long boardId, TaskList taskList) {
-        // Find the Board by boardId
         Board board = boardRepository.findById(boardId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid board ID: " + boardId));
 
-        // Set the Board on the TaskList
         taskList.setBoard(board);
 
-        // Save the TaskList
         return taskListRepository.save(taskList);
     }
 

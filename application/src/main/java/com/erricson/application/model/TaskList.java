@@ -27,8 +27,6 @@ public class TaskList {
         return board != null ? board.getId() : null;
     }
 
-    // Constructors, Getters, and Setters
-
     public Long getId() {
         return id;
     }
